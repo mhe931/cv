@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Ebrahimzadeh - Senior Data Analyst</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for 'Inter' */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9; /* Light background */
+            color: #1f2937; /* Dark gray text */
+        }
+        
+        /* Custom scrollbar for a smoother look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: #3b82f6; /* Blue for the scroll handle */
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: #e5e7eb; /* Light gray for the track */
+        }
+
+        /* Subtle hover effect for work experience cards */
+        .work-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Mobile Navigation Toggle (Hamburger) -->
+    <div class="lg:hidden fixed top-4 right-4 z-50">
+        <button id="menu-button" class="p-2 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    <!-- Main Resume Container (Desktop: Two Columns, Mobile: Stacked) -->
+    <div class="min-h-screen lg:flex">
+        
+        <!-- Left Sidebar (Contact & Skills) -->
+        <aside id="sidebar" class="w-full lg:w-96 bg-gray-800 text-white p-8 lg:p-10 shadow-2xl lg:sticky lg:top-0 lg:h-screen overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed z-40 h-full">
+
+            <!-- Name and Title -->
+            <header class="text-center mb-10">
+                <div class="mx-auto w-32 h-32 bg-indigo-600 rounded-full flex items-center justify-center mb-4 border-4 border-indigo-400">
+                    <span class="text-5xl font-extrabold">DE</span>
+                </div>
+                <h1 class="text-3xl lg:text-4xl font-extrabold text-indigo-100 leading-tight">Daniel Ebrahimzadeh</h1>
+                <p class="text-lg font-medium text-indigo-300 mt-1">Senior Analyst & BI Strategist</p>
+            </header>
+
+            <!-- Contact Information -->
+            <section class="mb-10 p-4 bg-gray-700 rounded-xl shadow-inner">
+                <h2 class="text-xl font-bold mb-4 text-indigo-300 border-b border-indigo-500 pb-2">Contact Details</h2>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10 9l-2 2 4 4 2-2 3.32-1.332A1 1 0 0115 15v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+                        +358 449284270
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 12H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z"></path></svg>
+                        ebrz.daniel@gmail.com
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.814a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <a href="#" class="hover:text-indigo-400 transition duration-200">LinkedIn Profile</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Skills & Competencies -->
+            <section class="p-4 bg-gray-700 rounded-xl shadow-inner">
+                <h2 class="text-xl font-bold mb-4 text-indigo-300 border-b border-indigo-500 pb-2">Core Skills</h2>
+                
+                <div class="space-y-4">
+                    <!-- Technical Skills -->
+                    <div>
+                        <h3 class="font-semibold text-indigo-200 mb-2">Data & BI Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Spark</span>
+                            <span class="tag">Hadoop</span>
+                            <span class="tag">Airflow</span>
+                            <span class="tag">Metabase</span>
+                            <span class="tag">Power BI</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Analytics Skills -->
+                    <div>
+                        <h3 class="font-semibold text-indigo-200 mb-2 mt-4">Analysis & Strategy</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">Strategic Analysis</span>
+                            <span class="tag">Financial Acumen</span>
+                            <span class="tag">Forecasting (80% Acc.)</span>
+                            <span class="tag">BI/Market Intelligence</span>
+                            <span class="tag">Business Case Dev</span>
+                            <span class="tag">Data Governance</span>
+                        </div>
+                    </div>
+
+                    <!-- Energy Focus -->
+                    <div>
+                        <h3 class="font-semibold text-indigo-200 mb-2 mt-4">Industry Focus</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-energy">Energy Market Dynamics</span>
+                            <span class="tag-energy">Power Generation Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    /* Tailwind utility classes for skills tags */
+                    .tag {
+                        @apply inline-block px-3 py-1 text-xs font-semibold bg-gray-600 text-gray-100 rounded-full transition duration-200 hover:bg-indigo-500;
+                    }
+                    .tag-energy {
+                        @apply inline-block px-3 py-1 text-xs font-semibold bg-green-700 text-green-100 rounded-full transition duration-200 hover:bg-green-600;
+                    }
+                </style>
+            </section>
+        </aside>
+
+        <!-- Right Main Content (Profile, Experience, Education) -->
+        <main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
+            
+            <!-- Professional Profile -->
+            <section id="profile" class="mb-12 bg-white p-6 md:p-8 rounded-2xl shadow-xl">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-4 border-b-2 border-indigo-100 pb-2">Professional Profile</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Results-driven <b>Senior Analyst</b> with 6+ years of experience in Business Intelligence, Strategic Analysis, and Market Research, delivering actionable insights that strengthen decision-making and business growth. Skilled in financial and strategic case building, BI platforms, and data-driven analysis, with a growing focus on the <b>energy industry and sustainable technologies</b>. Proven ability to work across business units, senior leadership, and global teams. Seeking to contribute to Wärtsilä's vision of a 100% renewable energy future by driving advanced Business & Market Intelligence initiatives.
+                </p>
+            </section>
+
+            <!-- Work Experience -->
+            <section id="experience" class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-600 pb-2">Work Experience</h2>
+                
+                <div class="space-y-8">
+                    
+                    <!-- Job 1: Digikala E-Commerce Group -->
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Data Manager</h3>
+                                <p class="text-indigo-600 font-semibold">Digikala E-Commerce Group, Tehran, Iran</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jan 2024 - Present</p>
+                        </header>
+                        <p class="mb-3 text-gray-700">Reinforced strategic decision-making by developing a comprehensive Data Governance framework, improving data integrity and enabling efficient transitions across 8 ventures.</p>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                            <li>Designed and managed BI platforms (Airflow, Metabase, SQL), consolidating data and delivering strategic dashboards and market outlooks.</li>
+                            <li>Conducted advanced strategic analyses (e.g., cannibalization, correlation studies), integrating financial and business perspectives to optimize investment decisions.</li>
+                            <li>Developed distributed data pipelines (<b>Spark, Hadoop</b>) and automation tools (<b>Python</b>), enabling scalable insights and faster executive reporting.</li>
+                            <li>Coordinated cross-functional BI information flows, a model transferable to Wärtsilä's global business intelligence coordination.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2: Snapp! Market -->
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Marketing Data Analyst - Insight</h3>
+                                <p class="text-indigo-600 font-semibold">Snapp! Market, Tehran, Iran</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2021 - Jan 2024</p>
+                        </header>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                            <li>Built and managed BI systems and dashboards that drove <b>500% business growth</b>, reduced marketing costs by <b>23%</b>, and improved conversion rates by <b>34%</b>.</li>
+                            <li>Directed market research and competitor analysis to evaluate positioning and enhance strategic planning.</li>
+                            <li>Developed data-driven business cases supporting product and marketing strategies, achieving <b>80% accuracy</b> in forecasting and <b>75% acceptance rate</b> by leadership.</li>
+                            <li>Led cross-team engagement with marketing, product, and C-levels, improving strategic communication flow with 80% faster access to insights.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Job 3: Takhfifan -->
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Business Data Analyst</h3>
+                                <p class="text-indigo-600 font-semibold">Takhfifan, Tehran, Iran</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Feb 2020 - Sep 2021</p>
+                        </header>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                            <li>Built comprehensive business and financial cases, integrating KPIs, financial metrics, and market research with <b>95% accuracy</b> in management reporting.</li>
+                            <li>Conducted competitive and customer market analyses (500+ customers, 50 competitors), generating product strategy recommendations with a <b>75% adoption rate</b>.</li>
+                            <li>Supported strategic planning by managing OKRs, achieving a <b>90% completion rate</b> across business units.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4: TAPSI -->
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Business Intelligence Analyst</h3>
+                                <p class="text-indigo-600 font-semibold">TAPSI, Tehran, Iran</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">May 2018 - Feb 2020</p>
+                        </header>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                            <li>Developed and upgraded the company-wide BI landscape, providing actionable insights for senior managers and decision-makers.</li>
+                            <li>Created and maintained <b>Power BI reports and dashboards</b>, improving operational oversight and executive alignment.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <!-- Education & Academic Experience -->
+            <section id="education">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-600 pb-2">Education & Academic Experience</h2>
+                
+                <div class="space-y-8">
+                    
+                    <!-- Academic Experience -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Professor Assistant</h3>
+                                <p class="text-indigo-600 font-semibold">University of Vaasa, Vaasa, Finland</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected Fall 2025</p>
+                        </header>
+                        <p class="text-gray-700">Supporting master's students in <b>Python programming</b> and applications in data-driven strategic analysis.</p>
+                    </div>
+
+                    <!-- Master's Degree -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Master's in Computing Sciences (AI & Data Engineering)</h3>
+                                <p class="text-indigo-600 font-semibold">University of Vaasa, Finland</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected Oct 2025</p>
+                        </header>
+                    </div>
+
+                    <!-- M.A. Degree -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">M.A. in IT Entrepreneurship Management</h3>
+                                <p class="text-indigo-600 font-semibold">University of Tehran, Iran</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">2015-2018</p>
+                        </header>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </main>
+
+    </div>
+
+    <!-- JavaScript for Mobile Sidebar Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const sidebar = document.getElementById('sidebar');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                if (isHidden) {
+                    sidebar.classList.remove('-translate-x-full');
+                    iconOpen.classList.add('hidden');
+                    iconClose.classList.remove('hidden');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                }
+            });
+
+            // Close sidebar when clicking outside on mobile
+            // Only apply this logic on screens smaller than large (lg)
+            const mediaQuery = window.matchMedia('(min-width: 1024px)');
+
+            function closeSidebarOnResize(e) {
+                // If it transitions to desktop size, ensure sidebar is visible
+                if (e.matches) {
+                    sidebar.classList.remove('-translate-x-full');
+                    iconOpen.classList.add('hidden');
+                    iconClose.classList.add('hidden');
+                } else {
+                    // If it transitions to mobile size, hide the sidebar
+                    sidebar.classList.add('-translate-x-full');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                }
+            }
+
+            // Initial check and listener for resizing
+            closeSidebarOnResize(mediaQuery);
+            mediaQuery.addListener(closeSidebarOnResize);
+        });
+    </script>
+</body>
+</html>
+
