@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Däniel Ebrahimzadeh - Data Analyst and Insights</title>
+    <title>Däniel Ebrahimzadeh - Data Analyst and Insights | Full-stack Developer</title>
     
     <!-- Load Tailwind CSS (via CDN for single-file simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,10 +42,10 @@
             @apply inline-block px-3 py-1 text-xs font-semibold bg-gray-600 text-gray-100 rounded-full transition duration-200 hover:bg-indigo-500;
         }
         .tag-language {
-            @apply inline-block px-3 py-1 text-xs font-semibold bg-blue-700 text-blue-100 rounded-full transition duration-200 hover:bg-blue-600;
+            @apply inline-block px-3 py-1 text-sm font-semibold bg-blue-700 text-blue-100 rounded-full transition duration-200 hover:bg-blue-600;
         }
         .tag-tech {
-            @apply inline-block px-3 py-1 text-xs font-semibold bg-indigo-600 text-indigo-100 rounded-full transition duration-200 hover:bg-indigo-500;
+            @apply inline-block px-3 py-1 text-sm font-semibold bg-indigo-600 text-indigo-100 rounded-full transition duration-200 hover:bg-indigo-500;
         }
 
         /* CSS to hide the content from human viewers but keep it readable for AI/ATS */
@@ -77,21 +77,23 @@
     <div class="min-h-screen lg:flex">
         
         <!-- Left Sidebar (Contact, Skills, Education) -->
-        <aside id="sidebar" class="w-full lg:w-96 bg-gray-800 text-white p-8 lg:p-10 shadow-2xl lg:sticky lg:top-0 lg:h-screen overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed z-40 h-full">
+        <aside id="sidebar" class="w-full lg:w-96 bg-gray-900 text-white p-8 lg:p-10 shadow-2xl lg:sticky lg:top-0 lg:h-screen overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed z-40 h-full">
 
             <!-- Name and Title -->
             <header class="text-center mb-10">
-                <!-- Profile Picture (Updated with your uploaded image) -->
-                <div class="mx-auto w-36 h-36 mb-4">
-                    <img src="1760957679045.jpg" alt="Däniel Ebrahimzadeh Profile Picture" class="rounded-full w-full h-full object-cover border-4 border-indigo-400 shadow-lg">
+                <div class="relative mx-auto w-40 h-40 mb-6 p-1 rounded-full border-2 border-indigo-400/30">
+                    <img src="danielebrahimzadeh.jpg" 
+                        alt="Däniel Ebrahimzadeh Profile Picture" 
+                        class="rounded-full w-full h-full object-cover border-4 border-indigo-600 shadow-2xl transition duration-500 hover:scale-105">
                 </div>
-                <h1 class="text-3xl lg:text-4xl font-extrabold text-indigo-100 leading-tight">Däniel Ebrahimzadeh</h1>
-                <p class="text-lg font-medium text-indigo-300 mt-1">Data Analyst and Insights</p>
-            </header>
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-100 leading-tight">Däniel Ebrahimzadeh</h1>
+                <p class="text-lg font-medium text-indigo-400 mt-2 uppercase tracking-wide">Data Analyst and Insights</p>
+                <p class="text-md font-medium text-indigo-300 mt-1 uppercase tracking-wide">Full-stack Developer</p>
+             </header>
 
             <!-- Contact Information -->
-            <section class="mb-10 p-4 bg-gray-700 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-300 border-b border-indigo-500 pb-2">Contact Details</h2>
+            <section class="mb-10 p-4 bg-gray-800 rounded-xl shadow-inner">
+                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Contact Details</h2>
                 <ul class="space-y-3 text-sm">
                     <li class="flex items-center">
                         <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10 9l-2 2 4 4 2-2 3.32-1.332A1 1 0 0115 15v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
@@ -110,13 +112,13 @@
             </section>
 
             <!-- Skills & Competencies -->
-            <section class="mb-10 p-4 bg-gray-700 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-300 border-b border-indigo-500 pb-2">Skills Summary</h2>
+            <section class="mb-10 p-4 bg-gray-800 rounded-xl shadow-inner">
+                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Skills Summary</h2>
                 
                 <div class="space-y-4">
                     <!-- Data Analysis -->
                     <div>
-                        <h3 class="font-semibold text-indigo-200 mb-2">Data Analysis</h3>
+                        <h3 class="font-bold text-indigo-200 mb-2">Data Analysis</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag-tech">Python</span>
                             <span class="tag-tech">SQL</span>
@@ -131,7 +133,7 @@
                     
                     <!-- Data Engineering -->
                     <div>
-                        <h3 class="font-semibold text-indigo-200 mb-2 mt-4">Data Engineering</h3>
+                        <h3 class="font-bold text-indigo-200 mb-2 mt-4">Data Engineering</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag-tech">Data Warehousing</span>
                             <span class="tag-tech">Data Modeling</span>
@@ -141,18 +143,22 @@
                             <span class="tag-tech">Hadoop</span>
                             <span class="tag-tech">Spark</span>
                             <span class="tag-tech">Google BigQuery</span>
+                            <span class="tag-tech">SQL Server</span>
+                            <span class="tag-tech">MySQL</span>
                         </div>
                     </div>
 
                     <!-- BI & Marketing -->
                     <div>
-                        <h3 class="font-semibold text-indigo-200 mb-2 mt-4">BI & Marketing</h3>
+                        <h3 class="font-bold text-indigo-200 mb-2 mt-4">BI & Marketing</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag-tech">Power BI</span>
                             <span class="tag-tech">Growth Hacking</span>
                             <span class="tag-tech">A/B Testing</span>
                             <span class="tag-tech">Marketing Attribution</span>
                             <span class="tag-tech">CRM</span>
+                            <span class="tag-tech">Looker</span>
+                            <span class="tag-tech">PowerPoint</span>
                             <span class="tag-tech">Scrum/Github</span>
                         </div>
                     </div>
@@ -160,8 +166,8 @@
             </section>
 
             <!-- Languages -->
-            <section class="p-4 bg-gray-700 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-300 border-b border-indigo-500 pb-2">Languages</h2>
+            <section class="p-4 bg-gray-800 rounded-xl shadow-inner">
+                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Languages</h2>
                 <div class="flex flex-wrap gap-2">
                     <span class="tag-language">Persian (Native)</span>
                     <span class="tag-language">English (B2/IELTS 6.5)</span>
@@ -170,22 +176,30 @@
                     <span class="tag-language">Arabic (Beginner)</span>
                 </div>
             </section>
+
+            <!-- Certifications -->
+            <section class="p-4 bg-gray-800 rounded-xl shadow-inner mt-10">
+                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Certifications</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-language">Professional Scrum Master</span>
+                </div>
+            </section>
         </aside>
 
         <!-- Right Main Content (Profile, Experience, Education) -->
         <main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
             
             <!-- Professional Profile -->
-            <section id="profile" class="mb-12 bg-white p-6 md:p-8 rounded-2xl shadow-xl">
-                <h2 class="text-2xl font-bold text-indigo-600 mb-4 border-b-2 border-indigo-100 pb-2">Professional Profile</h2>
-                <p class="text-gray-700 leading-relaxed">
+            <section id="profile" class="mb-12 bg-gray-100 p-6 md:p-8 rounded-2xl shadow-xl">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-4 border-b-2 border-indigo-200 pb-2">Professional Profile</h2>
+                <p class="text-gray-600 leading-normal">
                     Senior data engineering professional with 12+ years of expertise in building scalable data infrastructure, delivering measurable business impact, and mentoring technical teams. Proficient in Python, SQL, and distributed data systems (Spark, Hadoop, Airflow). Demonstrated ability to architect data-driven solutions that accelerated revenue growth and optimized operational costs across Fortune 500 companies and high-growth startups.
                 </p>
             </section>
 
             <!-- Work Experience -->
             <section id="experience" class="mb-12">
-                <h2 class="text-2xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-600 pb-2">Work Experience</h2>
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Work Experience</h2>
                 
                 <div class="space-y-8">
                     
@@ -193,12 +207,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Teaching Assistant (Python Programming)</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Teaching Assistant (Python Programming)</h3>
                                 <p class="text-indigo-600 font-semibold">University of Vaasa, Finland</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected: Fall 2025</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected: Fall 2025</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Mentoring Master's students in advanced <b>Python programming</b> with emphasis on data-driven strategic analysis, code optimization, and best practices in software engineering.</li>
                             <li>Facilitating the practical application of Python in tackling real-world data engineering and analysis challenges within strategic business contexts.</li>
                         </ul>
@@ -208,12 +222,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Data Manager</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Data Manager</h3>
                                 <p class="text-indigo-600 font-semibold">Digikala E-Commerce Group</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jan 2024 – Present</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jan 2024 – Present</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Architected enterprise-scale <b>Data Governance Framework</b> ensuring unified data management practices, regulatory compliance, and secure transition protocols across 8 independent ventures—enabling coherent data strategy across $500M+ portfolio.</li>
                             <li>Led Customer Data Platform (CDP) consolidation initiative, unifying customer intelligence across 15+ data sources and enabling real-time segmentation for targeted marketing campaigns.</li>
                             <li>Conducted quantitative analysis identifying cross-venture cannibalization patterns and customer behavioral correlations, informing $50M+ in product portfolio optimization decisions.</li>
@@ -226,12 +240,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Marketing Data Analyst - Insights</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Marketing Data Analyst - Insights</h3>
                                 <p class="text-indigo-600 font-semibold">Snapp! Market</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2021 – Jan 2024</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2021 – Jan 2024</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Engineered data-driven analytics infrastructure and dashboards driving <b>500% revenue growth</b>, achieving <b>23% marketing cost reduction</b>, and delivering <b>34% conversion rate uplift</b> through statistical optimization.</li>
                             <li>Orchestrated multi-channel A/B testing program using <b>Google Tag Manager and Google Analytics</b>, iterating on 200+ experiments to achieve 15%+ monthly uplift in customer acquisition cost efficiency.</li>
                             <li>Conducted advanced market research and competitive analysis across 50+ competitors, translating insights into product strategy recommendations with 85% C-level adoption rate.</li>
@@ -244,12 +258,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Business Data Analyst</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Business Data Analyst</h3>
                                 <p class="text-indigo-600 font-semibold">Takhfifan</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Feb 2020 – Sep 2021</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Feb 2020 – Sep 2021</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Evaluated company performance by analyzing <b>key performance indicators (KPIs)</b> and financial metrics, implementing management reports and a business plan with 95% accuracy.</li>
                             <li>Monitored operations performance using JIRA and managed <b>Objectives and Key Results (OKR)</b> with a 90% completion rate.</li>
                             <li>Performed market analysis (500+ customers, 50+ competitors) and developed data-based product strategy suggestions with a 75% acceptance rate.</li>
@@ -260,12 +274,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Business Intelligence Analyst</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Business Intelligence Analyst</h3>
                                 <p class="text-indigo-600 font-semibold">TAPSI</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">May 2018 - Feb 2020</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">May 2018 - Feb 2020</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Addressed BI needs across the organization and supported senior managers by upgrading the BI landscape and creating and maintaining <b>Power BI</b> reports.</li>
                         </ul>
                     </div>
@@ -274,12 +288,12 @@
                     <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">ERP & BI Specialist</h3>
+                                <h3 class="text-lg font-bold text-gray-800">ERP & BI Specialist</h3>
                                 <p class="text-indigo-600 font-semibold">BASA</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jun 2012 – May 2015</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jun 2012 – May 2015</p>
                         </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
                             <li>Consulted on the implementation of <b>Oracle ERP</b> on SCM, ONT, Advanced Pricing, and Business Intelligence for various clients.</li>
                         </ul>
                     </div>
@@ -287,9 +301,50 @@
                 </div>
             </section>
             
+            <!-- Projects -->
+            <section id="projects" class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Projects</h2>
+                <div class="space-y-8">
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <header class="flex justify-between items-start mb-3 border-b pb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">Personal Website</h3>
+                                <p class="text-indigo-600 font-semibold">My personal website and portfolio.</p>
+                            </div>
+                        </header>
+                        <p class="text-gray-600 text-xs mb-4">My personal website and portfolio, built with HTML, Tailwind CSS, and JavaScript. Hosted on GitHub Pages.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag-tech">HTML</span>
+                            <span class="tag-tech">Tailwind CSS</span>
+                            <span class="tag-tech">JavaScript</span>
+                            <span class="tag-tech">GitHub Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section id="portfolio" class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <img src="https://placehold.co/600x400" alt="Project 1" class="rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-gray-800">Project 1</h3>
+                        <p class="text-gray-600 text-xs">A short description of Project 1.</p>
+                        <a href="#" class="text-indigo-600 hover:underline mt-4 inline-block">View Project</a>
+                    </div>
+                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
+                        <img src="https://placehold.co/600x400" alt="Project 2" class="rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-gray-800">Project 2</h3>
+                        <p class="text-gray-600 text-xs">A short description of Project 2.</p>
+                        <a href="#" class="text-indigo-600 hover:underline mt-4 inline-block">View Project</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Education -->
             <section id="education">
-                <h2 class="text-2xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-600 pb-2">Education</h2>
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Education</h2>
                 
                 <div class="space-y-8">
                     
@@ -297,22 +352,22 @@
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Master’s in Computing Sciences, major in Artificial Intelligence and Data Engineering</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Master’s in Computing Sciences, major in Artificial Intelligence and Data Engineering</h3>
                                 <p class="text-indigo-600 font-semibold">University of Vaasa, Finland</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected Enrollment: October 2025</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected Enrollment: October 2025</p>
                         </header>
-                        <p class="text-gray-700">Supporting master's students in <b>Python programming</b> and applications in data-driven strategic analysis (Expected Fall 2025).</p>
+                        <p class="text-gray-600 leading-normal">Supporting master's students in <b>Python programming</b> and applications in data-driven strategic analysis (Expected Fall 2025).</p>
                     </div>
 
                     <!-- M.A. Degree (IT Entrepreneurship) -->
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">M.A. in IT Entrepreneurship Management</h3>
+                                <h3 class="text-lg font-bold text-gray-800">M.A. in IT Entrepreneurship Management</h3>
                                 <p class="text-indigo-600 font-semibold">University of Tehran, Iran</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2015 – Feb 2018</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2015 – Feb 2018</p>
                         </header>
                     </div>
                     
@@ -320,10 +375,10 @@
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <header class="flex justify-between items-start mb-3 border-b pb-2">
                             <div>
-                                <h3 class="text-xl font-bold text-gray-800">Bachelor of Science in Information Technology (IT) Engineering</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Bachelor of Science in Information Technology (IT) Engineering</h3>
                                 <p class="text-indigo-600 font-semibold">Sepahan Higher Education Institute, Iran</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Graduated: July 2010</p>
+                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Graduated: July 2010</p>
                         </header>
                     </div>
                     
@@ -342,7 +397,7 @@
 
                 <!-- Hidden Keywords for ATS Keyword Matching -->
                 <p>
-                    Senior Data Engineer Analyst Scientist Manager Strategist Architect Consultant Expert Data Science Machine Learning ML Artificial Intelligence Cloud Computing AWS Azure GCP Data Warehouse Data Lake ETL ELT Pipeline Development Scripting Programming <b>Python</b> R Scala Java <b>SQL</b> Server PostgreSQL MySQL MongoDB NoSQL Visualization <b>Tableau</b> <b>Power BI</b> Metabase Looker Dashboards Reports Analytics Strategic Planning Forecasting Financial Modeling Budgeting Business Case Development ROI Assessment Market Analysis Competitive Landscape Research Renewable Energy Power Generation Sustainability Energy Transition Grid Optimization Structured Analytical Methodologies Process Improvement Continuous Integration Continuous Delivery DevOps Agile <b>Scrum</b> Leadership Mentorship Stakeholder Management Executive Communication Problem Solving Detail Oriented Results Driven Impact Focused Global Experience International Teamwork <b>Finnish language</b> <b>Vaasa</b> Helsinki Tampere Oulu Turku Nordic market <b>E-commerce</b> Supply Chain <b>Oracle ERP</b>.
+                    Senior Data Engineer Analyst Scientist Manager Strategist Architect Consultant Expert Data Science Machine Learning ML Artificial Intelligence Cloud Computing AWS Azure GCP Data Warehouse Data Lake ETL ELT Pipeline Development Scripting Programming <b>Python</b> R Scala Java <b>SQL</b> Server PostgreSQL MySQL MongoDB NoSQL Visualization <b>Tableau</b> <b>Power BI</b> Metabase Looker Dashboards Reports Analytics Strategic Planning Forecasting Financial Modeling Budgeting Business Case Development ROI Assessment Market Analysis Competitive Landscape Research Renewable Energy Power Generation Sustainability Energy Transition Grid Optimization Structured Analytical Methodologies Process Improvement Continuous Integration Continuous Delivery DevOps Agile <b>Scrum</b> Leadership Mentorship Stakeholder Management Executive Communication Problem Solving Detail Oriented Results Driven Impact Focused Global Experience International Teamwork <b>Finnish language</b> <b>Vaasa</b> Helsinki Tampere Oulu Turku Nordic market <b>E-commerce</b> Supply Chain <b>Oracle ERP</b> Data Visualization Jira Oracle.
                 </p>
             </div>
             
