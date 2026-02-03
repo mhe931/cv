@@ -1,448 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Däniel Ebrahimzadeh - Data Engineer | AI Specialist</title>
-    
-    <!-- Load Tailwind CSS (via CDN for single-file simplicity) -->
+    <title>Daniel Ebrahimzadeh - Data Lead | AI & Data Engineering Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font import for 'Inter' */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4f7f9; /* Light background */
-            color: #1f2937; /* Dark gray text */
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-        
-        /* Custom scrollbar for a smoother look */
+
+        .glass-sidebar {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .skill-tag {
+            @apply px-3 py-1 bg-slate-700 text-slate-200 text-xs font-semibold rounded-md border border-slate-600 transition-all hover:bg-blue-600 hover:border-blue-400;
+        }
+
+        .experience-card {
+            @apply bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md hover:border-blue-300;
+        }
+
+        .metric-highlight {
+            @apply font-bold text-blue-600;
+        }
+
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
-        
+
         ::-webkit-scrollbar-thumb {
-            background-color: #3b82f6; /* Blue for the scroll handle */
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background-color: #e5e7eb; /* Light gray for the track */
-        }
-
-        /* Subtle hover effect for work experience cards */
-        .work-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Custom Tailwind utility classes for skills tags */
-        .tag {
-            @apply inline-block px-3 py-1 text-xs font-semibold bg-gray-600 text-gray-100 rounded-full transition duration-200 hover:bg-indigo-500;
-        }
-        .tag-language {
-            @apply inline-block px-3 py-1 text-sm font-semibold bg-blue-700 text-blue-100 rounded-full transition duration-200 hover:bg-blue-600;
-        }
-        .tag-language-learning {
-            @apply inline-block px-3 py-1 text-sm font-semibold bg-green-600 text-green-100 rounded-full transition duration-200 hover:bg-green-500;
-        }
-        .tag-tech {
-            @apply inline-block px-3 py-1 text-sm font-semibold bg-indigo-600 text-indigo-100 rounded-full transition duration-200 hover:bg-indigo-500;
-        }
-
-        /* CSS to hide the content from human viewers but keep it readable for AI/ATS */
-        .ats-hidden {
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            color: transparent; /* Text color matches background visually */
-            font-size: 1px; /* Minimum size */
-            line-height: 0; /* No line height to affect layout */
+            background: #3b82f6;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body class="antialiased">
 
-    <!-- Mobile Navigation Toggle (Hamburger) - Included for structure, but minimal resume doesn't need external links -->
-    <div class="lg:hidden fixed top-4 right-4 z-50">
-        <button id="menu-button" class="p-2 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
-            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <!-- Mobile Header -->
+    <div class="lg:hidden bg-slate-900 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <h1 class="text-xl font-bold">Daniel Ebrahimzadeh</h1>
+        <button id="mobile-menu-btn" class="p-2 bg-blue-600 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
         </button>
     </div>
 
-    <!-- Main Resume Container (Desktop: Two Columns, Mobile: Stacked) -->
-    <div class="min-h-screen lg:flex">
-        
-        <!-- Left Sidebar (Contact, Skills, Education) -->
-        <aside id="sidebar" class="w-full lg:w-96 bg-gray-900 text-white p-8 lg:p-10 shadow-2xl lg:sticky lg:top-0 lg:h-screen overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed z-40 h-full">
+    <div class="flex flex-col lg:flex-row min-h-screen">
 
-            <!-- Name and Title -->
-            <header class="text-center mb-10">
-                <div class="relative mx-auto w-40 h-40 mb-6 p-1 rounded-full border-2 border-indigo-400/30">
-                    <img src="danielebrahimzadeh.jpg" 
-                        alt="Däniel Ebrahimzadeh Profile Picture" 
-                        class="rounded-full w-full h-full object-cover border-4 border-indigo-600 shadow-2xl transition duration-500 hover:scale-105">
+        <!-- Left Sidebar -->
+        <aside id="sidebar"
+            class="hidden lg:flex flex-col w-full lg:w-96 glass-sidebar text-white p-8 lg:fixed lg:h-full overflow-y-auto z-40">
+            <div class="text-center mb-10">
+                <div class="relative mx-auto w-32 h-32 mb-4 p-1 rounded-full border-2 border-blue-500/30">
+                    <img src="danielebrahimzadeh.jpg" alt="Daniel Ebrahimzadeh"
+                        class="rounded-full w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 border-2 border-white/10">
                 </div>
-                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-100 leading-tight">Däniel Ebrahimzadeh</h1>
-                <p class="text-lg font-medium text-indigo-400 mt-2 uppercase tracking-wide">Data Engineer | AI Specialist</p>
-                <p class="text-md font-medium text-gray-400 mt-1">Vaasa, Finland</p>
-             </header>
+                <h1 class="text-2xl font-extrabold tracking-tight">Daniel Ebrahimzadeh</h1>
+                <p class="text-blue-400 font-medium uppercase text-xs tracking-widest mt-2">Data Lead | AI Specialist
+                </p>
+                <p class="text-slate-400 text-sm mt-1">Vaasa, Finland</p>
+            </div>
 
-            <!-- Contact Information -->
-            <section class="mb-10 p-4 bg-gray-800 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Contact Details</h2>
-                <ul class="space-y-3 text-sm">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10 9l-2 2 4 4 2-2 3.32-1.332A1 1 0 0115 15v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
-                        +358 449284270
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 12H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z"></path></svg>
-                        daniel.ebrz.93@gmail.com
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.814a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="https://www.linkedin.com/in/danielebrahimzadeh/" class="hover:text-indigo-400 transition duration-200">LinkedIn</a> |
-                        <a href="https://github.com/mhe931" class="hover:text-indigo-400 transition duration-200">GitHub</a>
-                    </li>
-                </ul>
-            </section>
+            <nav class="space-y-8">
+                <!-- Contact -->
+                <section>
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Contact</h2>
+                    <ul class="text-sm space-y-3">
+                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">📧</span>
+                            daniel.ebrz.93@gmail.com</li>
+                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">📞</span> +358
+                            449284270</li>
+                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">🔗</span> <a
+                                href="https://linkedin.com/in/danielebrahimzadeh"
+                                class="hover:text-blue-400 ml-1">LinkedIn</a> / <a href="https://github.com/mhe931"
+                                class="hover:text-blue-400">GitHub</a></li>
+                    </ul>
+                </section>
 
-            <!-- Skills & Competencies -->
-            <section class="mb-10 p-4 bg-gray-800 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Skills Summary</h2>
-                
-                <div class="space-y-4">
-                    <!-- Data Infrastructure & Distributed Systems -->
-                    <div>
-                        <h3 class="font-bold text-indigo-200 mb-2">Data Infrastructure & Distributed Systems</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag-tech">Python</span>
-                            <span class="tag-tech">SQL</span>
-                            <span class="tag-tech">Apache Spark</span>
-                            <span class="tag-tech">Apache Hadoop</span>
-                            <span class="tag-tech">Apache Airflow</span>
-                            <span class="tag-tech">ETL/ELT</span>
-                            <span class="tag-tech">Data Warehousing</span>
-                            <span class="tag-tech">Data Modeling</span>
-                            <span class="tag-tech">Google BigQuery</span>
-                            <span class="tag-tech">SQL Server</span>
-                            <span class="tag-tech">MySQL</span>
+                <!-- Technical Stack -->
+                <section>
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Technical Stack</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xs font-semibold text-blue-400 mb-2">Languages</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Python (Polars/Dask)</span>
+                                <span class="skill-tag">SQL (Advanced)</span>
+                                <span class="skill-tag">PySpark</span>
+                                <span class="skill-tag">R</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-semibold text-blue-400 mb-2">Data Ops</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Airflow</span>
+                                <span class="skill-tag">Hadoop/Spark</span>
+                                <span class="skill-tag">ETL/ELT</span>
+                                <span class="skill-tag">Kafka</span>
+                                <span class="skill-tag">BigQuery</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-semibold text-blue-400 mb-2">AI/ML & BI</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Scikit-learn</span>
+                                <span class="skill-tag">MLOps</span>
+                                <span class="skill-tag">Multi-Armed Bandits</span>
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">Metabase</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Analytics & Business Intelligence -->
-                    <div>
-                        <h3 class="font-bold text-indigo-200 mb-2 mt-4">Analytics & Business Intelligence</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag-tech">Metabase</span>
-                            <span class="tag-tech">Power BI</span>
-                            <span class="tag-tech">Tableau</span>
-                            <span class="tag-tech">QlikView</span>
-                            <span class="tag-tech">Looker</span>
-                            <span class="tag-tech">Statistical Modeling</span>
-                            <span class="tag-tech">A/B Testing</span>
-                            <span class="tag-tech">Google Analytics</span>
-                            <span class="tag-tech">Amplitude</span>
-                            <span class="tag-tech">CRM</span>
-                        </div>
+                </section>
+
+                <!-- Languages -->
+                <section>
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Languages</h2>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm"><span>English</span><span class="text-blue-400">Fluent
+                                (IELTS 6.5)</span></div>
+                        <div class="flex justify-between text-sm"><span>Finnish</span><span
+                                class="text-green-400">Learning (A1)</span></div>
+                        <div class="flex justify-between text-sm"><span>Persian</span><span
+                                class="text-slate-400">Native</span></div>
                     </div>
-
-                    <!-- Additional Skills -->
-                    <div>
-                        <h3 class="font-bold text-indigo-200 mb-2 mt-4">Methodologies & Tools</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag-tech">Agile/Scrum</span>
-                            <span class="tag-tech">Jira</span>
-                            <span class="tag-tech">Git/GitHub</span>
-                            <span class="tag-tech">Growth Hacking</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Languages -->
-            <section class="p-4 bg-gray-800 rounded-xl shadow-inner">
-                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Languages</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag-language">Persian (Native)</span>
-                    <span class="tag-language">English (Fluent)</span>
-                    <span class="tag-language-learning">Finnish (A1 - Learning)</span>
-                    <span class="tag-language">French (Beginner)</span>
-                </div>
-            </section>
-
-            <!-- Certifications -->
-            <section class="p-4 bg-gray-800 rounded-xl shadow-inner mt-10">
-                <h2 class="text-xl font-bold mb-4 text-indigo-400 border-b border-indigo-600 pb-2">Certifications</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag-language">Professional Scrum Master</span>
-                </div>
-            </section>
+                </section>
+            </nav>
         </aside>
 
-        <!-- Right Main Content (Profile, Experience, Education) -->
-        <main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
-            
-            <!-- Professional Profile -->
-            <section id="profile" class="mb-12 bg-gray-100 p-6 md:p-8 rounded-2xl shadow-xl">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-4 border-b-2 border-indigo-200 pb-2">Professional Profile</h2>
-                <p class="text-gray-600 leading-normal">
-                    A process-oriented data professional currently pursuing a Master's in AI and Data Engineering at the University of Vaasa. With over 12 years of experience, I bring a pragmatic, hands-on approach to building and optimizing data infrastructure. My background involves developing scalable systems using Python, SQL, Spark, and Airflow, with a focus on creating tangible business value. I am eager to apply my skills in a challenging role within Finland's technology sector, particularly in environments related to Industrial IoT (IIoT) and process optimization.
+        <!-- Main Content -->
+        <main class="flex-1 p-6 lg:p-12 lg:ml-96">
+
+            <!-- Professional Summary -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Strategic Data Orchestrator</h2>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+                    Enterprise-scale Data Lead with over 15 years of experience bridging legacy ERP systems (SAP/Oracle)
+                    with modern AI and Data Engineering. Expert in architecting distributed infrastructures that deliver
+                    <span class="metric-highlight">measurable business value</span>, from unifying $500M+ portfolios to
+                    automating core decision-making through Business AI.
                 </p>
             </section>
 
-            <!-- Technical Competencies -->
-            <section id="tech-competencies" class="mb-12">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Technical Competencies</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 text-sm">
-                    <div>
-                        <h3 class="font-bold text-gray-800 mb-2">Languages & Databases</h3>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>Python (Pandas, Dask)</li>
-                            <li>SQL (Advanced)</li>
-                            <li>SQL Server, MySQL</li>
-                            <li>Google BigQuery</li>
+            <!-- Experience -->
+            <section class="mb-12">
+                <div class="flex items-center justify-between mb-8 border-b-2 border-slate-100 pb-4">
+                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Professional Experience</h2>
+                    <span class="text-slate-400 text-sm">2009 — 2026</span>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Digikala -->
+                    <div class="experience-card">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Data Lead / Project Specialist</h3>
+                                <p class="text-blue-600 font-semibold">Digikala E-Commerce Group <span
+                                        class="text-slate-400 font-normal ml-2">| Tehran</span></p>
+                            </div>
+                            <span class="text-sm font-bold text-slate-500 mt-2 md:mt-0">JAN 2024 — PRESENT</span>
+                        </div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2 text-sm">
+                            <li>Spearheaded a group-wide <span class="font-bold">Data Governance framework</span>
+                                unifying practices across 8 business ventures for a $500M+ portfolio.</li>
+                            <li>Orchestrated the Customer Data Platform (CDP) project, consolidating multi-source
+                                intelligence to achieve <span class="metric-highlight">98% data accuracy</span> across
+                                the ecosystem.</li>
+                            <li>Engineered distributed pipelines using <span class="font-bold">Apache Spark and
+                                    Hadoop</span> to process 10GB+ daily volumes, enabling real-time cross-venture
+                                cannibalization analysis.</li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800 mb-2">Distributed Systems & Cloud</h3>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>Apache Spark</li>
-                            <li>Apache Hadoop</li>
-                            <li>Apache Airflow</li>
-                            <li>ETL/ELT Pipelines</li>
+
+                    <!-- Snapp! -->
+                    <div class="experience-card">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Marketing Data Lead</h3>
+                                <p class="text-blue-600 font-semibold">Snapp! Market (Romak) <span
+                                        class="text-slate-400 font-normal ml-2">| Tehran</span></p>
+                            </div>
+                            <span class="text-sm font-bold text-slate-500 mt-2 md:mt-0">SEP 2021 — JAN 2024</span>
+                        </div>
+                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2 text-sm">
+                            <li>Engineered the data infrastructure driving <span class="metric-highlight">500% revenue
+                                    growth</span> and a <span class="metric-highlight">23% marketing cost
+                                    reduction</span> through advanced statistical optimization.</li>
+                            <li>Automated vendor discount optimization by deploying <span class="font-bold">Multi-Armed
+                                    Bandit</span> algorithms into live production environments.</li>
+                            <li>Increased organizational <span class="font-bold">decision velocity by 80%</span> through
+                                the integration of Python-based predictive modeling with Metabase.</li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800 mb-2">BI & Visualization</h3>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>Metabase</li>
-                            <li>Power BI</li>
-                            <li>Tableau, QlikView, Looker</li>
-                        </ul>
+
+                    <!-- Takhfifan -->
+                    <div class="experience-card border-l-4 border-slate-200">
+                        <div class="flex justify-between mb-2">
+                            <h3 class="font-bold text-slate-800">Business Data Specialist</h3>
+                            <span class="text-xs font-bold text-slate-400">2020 — 2021</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-2">Takhfifan (Arman Fanavari Aria)</p>
+                        <p class="text-xs text-slate-600">Developed data-driven product strategies resulting in a 75%
+                            C-level adoption rate and orchestrated group-wide OKR management.</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800 mb-2">Methodologies</h3>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>Data Governance</li>
-                            <li>Data Modeling</li>
-                            <li>Agile/Scrum</li>
-                        </ul>
+
+                    <!-- TAPSI -->
+                    <div class="experience-card border-l-4 border-slate-200">
+                        <div class="flex justify-between mb-2">
+                            <h3 class="font-bold text-slate-800">Business Intelligence Analyst</h3>
+                            <span class="text-xs font-bold text-slate-400">2018 — 2020</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-2">TAPSI (Pishgaman Fanavari)</p>
+                        <p class="text-xs text-slate-600">Upgraded the BI landscape by architecting real-time Power BI
+                            reporting for churn analysis and growth forecasting.</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800 mb-2">Industry Context</h3>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>IIoT (Industrial IoT)</li>
-                            <li>E-commerce & Marketing Tech</li>
-                            <li>Oracle ERP Systems</li>
-                        </ul>
+
+                    <!-- BASA (ERP Focus) -->
+                    <div class="experience-card bg-slate-50 border-blue-200">
+                        <div class="flex justify-between mb-2">
+                            <h3 class="font-bold text-blue-800">ERP & BI Specialist</h3>
+                            <span class="text-xs font-bold text-blue-400">2011 — 2014</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-2">BASA (Informatics System Avaran)</p>
+                        <p class="text-xs text-slate-600 italic">Core Bridge Period: Consulted on enterprise
+                            implementation of Oracle ERP (SCM/ONT/Advanced Pricing), integrating legacy transactional
+                            data with Business Intelligence modules.</p>
+                    </div>
+
+                    <!-- Early Career -->
+                    <div class="text-center py-4">
+                        <p class="text-xs text-slate-400 uppercase tracking-widest">Early career: Junior Data Analyst at
+                            Yalda Dey (2009-2011)</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Work Experience -->
-            <section id="experience" class="mb-12">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Work Experience</h2>
-                
-                <div class="space-y-8">
-                    
-                    <!-- Job 0: Teaching Assistant -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Teaching Assistant (Python Programming)</h3>
-                                <p class="text-indigo-600 font-semibold">University of Vaasa, Finland</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected: Fall 2025</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Mentoring Master's students in advanced <b>Python programming</b> with emphasis on data-driven strategic analysis, code optimization, and best practices in software engineering.</li>
-                            <li>Facilitating the practical application of Python in tackling real-world data engineering and analysis challenges within strategic business contexts.</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Job 1: Digikala E-Commerce Group -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Data Manager</h3>
-                                <p class="text-indigo-600 font-semibold">Digikala E-Commerce Group</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jan 2024 – Present</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Architected enterprise-scale <b>Data Governance Framework</b> ensuring unified data management practices, regulatory compliance, and secure transition protocols across 8 independent ventures—enabling coherent data strategy across $500M+ portfolio.</li>
-                            <li>Led Customer Data Platform (CDP) consolidation initiative, unifying customer intelligence across 15+ data sources and enabling real-time segmentation for targeted marketing campaigns.</li>
-                            <li>Conducted quantitative analysis identifying cross-venture cannibalization patterns and customer behavioral correlations, informing $50M+ in product portfolio optimization decisions.</li>
-                            <li>Engineered distributed data pipelines using <b>Apache Spark and Hadoop</b> processing 10GB+ daily data volumes; built automated reporting infrastructure using <b>Python (Pandas, Polars, Dask)</b> delivering real-time insights to 50+ stakeholders.</li>
-                            <li>Designed and deployed <b>Metabase and Airflow</b>-based analytics infrastructure reducing query latency by 60% and enabling self-service analytics for non-technical business teams.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Job 2: Snapp! Market -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Marketing Data Analyst - Insights</h3>
-                                <p class="text-indigo-600 font-semibold">Snapp! Market</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2021 – Jan 2024</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Engineered data-driven analytics infrastructure and dashboards driving <b>500% revenue growth</b>, achieving <b>23% marketing cost reduction</b>, and delivering <b>34% conversion rate uplift</b> through statistical optimization.</li>
-                            <li>Orchestrated multi-channel A/B testing program using <b>Google Tag Manager and Google Analytics</b>, iterating on 200+ experiments to achieve 15%+ monthly uplift in customer acquisition cost efficiency.</li>
-                            <li>Conducted advanced market research and competitive analysis across 50+ competitors, translating insights into product strategy recommendations with 85% C-level adoption rate.</li>
-                            <li>Delivered bespoke analytics dashboards to marketing, product, and executive teams via <b>Metabase</b>, enabling self-service analytics that accelerated decision velocity by 4x and improved data literacy across organization.</li>
-                            <li>Optimized data pipeline architecture using <b>Python ETL workflows and SQL-based data modeling</b>, reducing monthly processing time by 55% while improving data accuracy from 85% to 98%.</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Job 3: Takhfifan -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Business Data Analyst</h3>
-                                <p class="text-indigo-600 font-semibold">Takhfifan</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Feb 2020 – Sep 2021</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Evaluated company performance by analyzing <b>key performance indicators (KPIs)</b> and financial metrics, implementing management reports and a business plan with 95% accuracy.</li>
-                            <li>Monitored operations performance using JIRA and managed <b>Objectives and Key Results (OKR)</b> with a 90% completion rate.</li>
-                            <li>Performed market analysis (500+ customers, 50+ competitors) and developed data-based product strategy suggestions with a 75% acceptance rate.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Job 4: TAPSI -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Business Intelligence Analyst</h3>
-                                <p class="text-indigo-600 font-semibold">TAPSI</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">May 2018 - Feb 2020</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Addressed BI needs across the organization and supported senior managers by upgrading the BI landscape and creating and maintaining <b>Power BI</b> reports.</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Job 5: BASA -->
-                    <div class="work-card bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">ERP & BI Specialist</h3>
-                                <p class="text-indigo-600 font-semibold">BASA</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Jun 2012 – May 2015</p>
-                        </header>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-xs">
-                            <li>Consulted on the implementation of <b>Oracle ERP</b> on SCM, ONT, Advanced Pricing, and Business Intelligence for various clients.</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </section>
-        
             <!-- Education -->
-            <section id="education">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 border-b-2 border-indigo-700 pb-2">Education</h2>
-                
-                <div class="space-y-8">
-                    
-                    <!-- Master's Degree (AI & Data Engineering) -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Master’s in Computing Sciences, major in Artificial Intelligence and Data Engineering</h3>
-                                <p class="text-indigo-600 font-semibold">University of Vaasa, Finland</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Expected Enrollment: October 2025</p>
-                        </header>
-                        <p class="text-gray-600 leading-normal">Supporting master's students in <b>Python programming</b> and applications in data-driven strategic analysis (Expected Fall 2025).</p>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2
+                        class="text-xl font-bold text-slate-800 uppercase tracking-wider mb-6 border-b-2 border-slate-100 pb-2">
+                        Academic Path</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-slate-900">MSc, Computing Sciences (AI & Data)</h3>
+                            <p class="text-blue-600 text-sm font-semibold">University of Vaasa, Finland <span
+                                    class="text-slate-400 ml-1">| 2025—2027</span></p>
+                            <p class="text-xs text-slate-500 mt-2">Serving as <span class="font-bold">Teaching
+                                    Assistant</span> for Python Programming and Data Engineering modules (2025).</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">MA, IT Entrepreneurship</h3>
+                            <p class="text-slate-600 text-sm">University of Tehran <span class="text-slate-400 ml-1">|
+                                    Graduated 2018</span></p>
+                            <p class="text-xs text-slate-400">Ranked 1st in class. GPA: 18.15/20.</p>
+                        </div>
                     </div>
-
-                    <!-- M.A. Degree (IT Entrepreneurship) -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">M.A. in IT Entrepreneurship Management</h3>
-                                <p class="text-indigo-600 font-semibold">University of Tehran, Iran</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Sep 2015 – Feb 2018</p>
-                        </header>
+                </div>
+                <div>
+                    <h2
+                        class="text-xl font-bold text-slate-800 uppercase tracking-wider mb-6 border-b-2 border-slate-100 pb-2">
+                        Merits</h2>
+                    <div class="space-y-4 text-sm">
+                        <p class="text-slate-600"><span class="font-bold">Publication:</span> Evaluating Eating Disorder
+                            Prevention via Twitter Data Analysis (Health Promotion Journal, 2021).</p>
+                        <p class="text-slate-600"><span class="font-bold">Book:</span> "Joke Marketing: An
+                            Entrepreneurial Approach" (2019).</p>
+                        <p class="text-slate-600"><span class="font-bold">Startup:</span> Co-founder of
+                            \textit{daye.ir}, University of Tehran Incubator graduate.</p>
                     </div>
-                    
-                    <!-- Bachelor's Degree -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <header class="flex justify-between items-start mb-3 border-b pb-2">
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800">Bachelor of Science in Information Technology (IT) Engineering</h3>
-                                <p class="text-indigo-600 font-semibold">Sepahan Higher Education Institute, Iran</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 bg-indigo-100 px-3 py-1 rounded-full">Graduated: July 2010</p>
-                        </header>
-                    </div>
-                    
                 </div>
             </section>
-
         </main>
-
     </div>
 
-    <!-- JavaScript for Mobile Sidebar Toggle (Kept for completeness) -->
+    <!-- Mobile Menu Logic -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('menu-button');
-            const sidebar = document.getElementById('sidebar');
-            const iconOpen = document.getElementById('menu-icon-open');
-            const iconClose = document.getElementById('menu-icon-close');
-
-            // Function to handle the sidebar toggle
-            const toggleSidebar = () => {
-                const isHidden = sidebar.classList.contains('-translate-x-full');
-                if (isHidden) {
-                    sidebar.classList.remove('-translate-x-full');
-                    iconOpen.classList.add('hidden');
-                    iconClose.classList.remove('hidden');
-                } else {
-                    sidebar.classList.add('-translate-x-full');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
-                }
-            };
-
-            menuButton.addEventListener('click', toggleSidebar);
-
-            // Logic to handle responsiveness
-            const mediaQuery = window.matchMedia('(min-width: 1024px)');
-
-            function closeSidebarOnResize(e) {
-                if (e.matches) {
-                    // Desktop view: ensure sidebar is visible
-                    sidebar.classList.remove('-translate-x-full');
-                    iconOpen.classList.add('hidden');
-                    iconClose.classList.add('hidden');
-                } else {
-                    // Mobile view: hide the sidebar by default
-                    sidebar.classList.add('-translate-x-full');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
-                }
-            }
-
-            // Initial check and listener for resizing
-            closeSidebarOnResize(mediaQuery);
-            mediaQuery.addListener(closeSidebarOnResize);
+        const btn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        btn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
         });
     </script>
 </body>
+
 </html>
