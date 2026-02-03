@@ -4,293 +4,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Ebrahimzadeh - Data Lead | AI & Data Engineering Specialist</title>
+    <title>Daniel Ebrahimzadeh - Data Lead & AI Architect</title>
+    <meta name="description"
+        content="Senior Data Lead & AI Architect bridging legacy ERP systems with modern AI. Expert in Data Orchestration, ETL/ELT, and MLOps. Based in Vaasa, Finland.">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        /* Modern Minimalist Design System */
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --secondary: #334155;
+            /* Slate 700 */
+            --accent: #2563eb;
+            /* Blue 600 */
+            --bg-body: #f8fafc;
+            /* Slate 50 */
+            --text-main: #1e293b;
+            /* Slate 800 */
+            --text-muted: #64748b;
+            /* Slate 500 */
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
+        h1,
+        h2,
+        h3,
+        h4 {
+            letter-spacing: -0.025em;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Sidebar Styling */
         .glass-sidebar {
-            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            background: #ffffff;
+            border-right: 1px solid #e2e8f0;
         }
 
-        .skill-tag {
-            @apply px-3 py-1 bg-slate-700 text-slate-200 text-xs font-semibold rounded-md border border-slate-600 transition-all hover:bg-blue-600 hover:border-blue-400;
+        @media (min-width: 1024px) {
+            .glass-sidebar {
+                background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+                color: white;
+                border-right: none;
+            }
+        }
+
+        /* Component Classes */
+        .section-header {
+            @apply text-xs font-bold uppercase tracking-widest mb-6 pb-2 border-b-2;
+        }
+
+        .lg-sidebar-text {
+            @apply lg:text-slate-300 text-slate-600;
+        }
+
+        .lg-sidebar-header {
+            @apply lg:text-slate-500 text-slate-400;
+        }
+
+        .skill-group-title {
+            @apply text-xs font-semibold uppercase tracking-wider mb-2 text-blue-500;
+        }
+
+        .skill-pill {
+            @apply inline-block px-2 py-1 text-xs font-medium rounded border transition-colors duration-200;
+            @apply bg-slate-100 text-slate-700 border-slate-200;
+            @apply lg:bg-slate-800 lg:text-slate-300 lg:border-slate-700;
+            @apply hover:border-blue-500 hover:text-blue-500;
         }
 
         .experience-card {
-            @apply bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md hover:border-blue-300;
+            @apply relative pl-8 pb-10 border-l-2 border-slate-200 last:pb-0;
         }
 
-        .metric-highlight {
-            @apply font-bold text-blue-600;
+        .experience-dot {
+            @apply absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-4 border-blue-500;
         }
 
+        .highlight-badge {
+            @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200;
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
         }
 
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
         ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 10px;
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+
+        .dark-scroll ::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+
+        /* Utilities */
+        .text-balance {
+            text-wrap: balance;
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased flex flex-col lg:flex-row min-h-screen">
 
-    <!-- Mobile Header -->
-    <div class="lg:hidden bg-slate-900 text-white p-4 flex justify-between items-center sticky top-0 z-50">
-        <h1 class="text-xl font-bold">Daniel Ebrahimzadeh</h1>
-        <button id="mobile-menu-btn" class="p-2 bg-blue-600 rounded-lg">
+    <!-- Mobile Header (Visible only on small screens) -->
+    <header class="lg:hidden bg-slate-900 text-white p-4 sticky top-0 z-50 flex justify-between items-center shadow-md">
+        <div>
+            <h1 class="font-bold text-lg">Daniel Ebrahimzadeh</h1>
+            <p class="text-xs text-blue-400">Data Lead | AI Architect</p>
+        </div>
+        <button id="mobile-menu-toggle" class="p-2 text-slate-300 hover:text-white focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
-    </div>
+    </header>
 
-    <div class="flex flex-col lg:flex-row min-h-screen">
+    <!-- Sidebar (Personal Info & Skills) -->
+    <aside id="sidebar"
+        class="glass-sidebar dark-scroll w-full lg:w-[360px] lg:fixed lg:h-screen overflow-y-auto hidden lg:flex flex-col z-40 transition-all duration-300">
+        <div class="p-8 lg:p-10 flex flex-col h-full">
 
-        <!-- Left Sidebar -->
-        <aside id="sidebar"
-            class="hidden lg:flex flex-col w-full lg:w-96 glass-sidebar text-white p-8 lg:fixed lg:h-full overflow-y-auto z-40">
-            <div class="text-center mb-10">
-                <div class="relative mx-auto w-32 h-32 mb-4 p-1 rounded-full border-2 border-blue-500/30">
+            <!-- Profile -->
+            <div class="mb-8">
+                <div class="relative w-32 h-32 mx-auto lg:mx-0 mb-6 group">
                     <img src="danielebrahimzadeh.jpg" alt="Daniel Ebrahimzadeh"
-                        class="rounded-full w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 border-2 border-white/10">
+                        class="w-full h-full object-cover rounded-full border-4 border-white/10 shadow-lg grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-slate-900 rounded-full"
+                        title="Available for work"></div>
                 </div>
-                <h1 class="text-2xl font-extrabold tracking-tight">Daniel Ebrahimzadeh</h1>
-                <p class="text-blue-400 font-medium uppercase text-xs tracking-widest mt-2">Data Lead | AI Specialist
+
+                <h1 class="text-3xl lg:text-2xl font-extrabold tracking-tight lg:text-white text-slate-900 mb-1">Daniel
+                    Ebrahimzadeh</h1>
+                <p class="text-blue-500 font-medium text-sm tracking-wide mb-4">Data Lead & AI Engineer</p>
+
+                <!-- Local Context Status -->
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                    <span class="text-xs font-semibold text-emerald-600 lg:text-emerald-400">Right to work in
+                        Finland</span>
+                </div>
+
+                <p class="text-sm lg-sidebar-text leading-relaxed mb-6">
+                    Based in <span class="text-white font-semibold">Vaasa, Finland</span>.<br>
+                    MSc Student at University of Vaasa.
                 </p>
-                <p class="text-slate-400 text-sm mt-1">Vaasa, Finland</p>
             </div>
 
-            <nav class="space-y-8">
-                <!-- Contact -->
-                <section>
-                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Contact</h2>
-                    <ul class="text-sm space-y-3">
-                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">📧</span>
-                            daniel.ebrz.93@gmail.com</li>
-                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">📞</span> +358
-                            449284270</li>
-                        <li class="flex items-center text-slate-300"><span class="w-5 text-blue-500">🔗</span> <a
-                                href="https://linkedin.com/in/danielebrahimzadeh"
-                                class="hover:text-blue-400 ml-1">LinkedIn</a> / <a href="https://github.com/mhe931"
-                                class="hover:text-blue-400">GitHub</a></li>
-                    </ul>
-                </section>
+            <!-- Contact Information -->
+            <div class="mb-10">
+                <h3 class="skill-group-title lg-sidebar-header">Contact</h3>
+                <ul class="space-y-3 text-sm lg-sidebar-text">
+                    <li>
+                        <a id="link-sidebar-email" href="mailto:daniel.ebrz.93@gmail.com"
+                            class="flex items-center group hover:text-white transition-colors">
+                            <span class="w-6 text-slate-400 group-hover:text-blue-400">✉</span>
+                            daniel.ebrz.93@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a id="link-sidebar-phone" href="tel:+358449284270"
+                            class="flex items-center group hover:text-white transition-colors">
+                            <span class="w-6 text-slate-400 group-hover:text-blue-400">📞</span>
+                            +358 44 928 4270
+                        </a>
+                    </li>
+                    <li class="flex gap-4 mt-2">
+                        <a id="link-sidebar-linkedin" href="https://linkedin.com/in/danielebrahimzadeh" target="_blank"
+                            class="text-slate-400 hover:text-blue-400 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a id="link-sidebar-github" href="https://github.com/mhe931" target="_blank"
+                            class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- Technical Stack -->
-                <section>
-                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Technical Stack</h2>
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="text-xs font-semibold text-blue-400 mb-2">Languages</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Python (Polars/Dask)</span>
-                                <span class="skill-tag">SQL (Advanced)</span>
-                                <span class="skill-tag">PySpark</span>
-                                <span class="skill-tag">R</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xs font-semibold text-blue-400 mb-2">Data Ops</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Airflow</span>
-                                <span class="skill-tag">Hadoop/Spark</span>
-                                <span class="skill-tag">ETL/ELT</span>
-                                <span class="skill-tag">Kafka</span>
-                                <span class="skill-tag">BigQuery</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xs font-semibold text-blue-400 mb-2">AI/ML & BI</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Scikit-learn</span>
-                                <span class="skill-tag">MLOps</span>
-                                <span class="skill-tag">Multi-Armed Bandits</span>
-                                <span class="skill-tag">Power BI</span>
-                                <span class="skill-tag">Metabase</span>
-                            </div>
-                        </div>
+            <!-- Technical Stack (Grouped) -->
+            <div class="flex-1 space-y-6">
+                <div>
+                    <h3 class="skill-group-title lg-sidebar-header">Orchestration & Data Ops</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-pill">Apache Airflow</span>
+                        <span class="skill-pill">Dagster</span>
+                        <span class="skill-pill">Kafka</span>
+                        <span class="skill-pill">ETL/ELT</span>
+                        <span class="skill-pill">CI/CD</span>
                     </div>
-                </section>
+                </div>
 
-                <!-- Languages -->
-                <section>
-                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Languages</h2>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm"><span>English</span><span class="text-blue-400">Fluent
-                                (IELTS 6.5)</span></div>
-                        <div class="flex justify-between text-sm"><span>Finnish</span><span
-                                class="text-green-400">Learning (A1)</span></div>
-                        <div class="flex justify-between text-sm"><span>Persian</span><span
-                                class="text-slate-400">Native</span></div>
+                <div>
+                    <h3 class="skill-group-title lg-sidebar-header">Processing & Storage</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-pill">Apache Spark</span>
+                        <span class="skill-pill">Polars</span>
+                        <span class="skill-pill">Dask</span>
+                        <span class="skill-pill">BigQuery</span>
+                        <span class="skill-pill">PostgreSQL</span>
                     </div>
-                </section>
-            </nav>
-        </aside>
+                </div>
 
-        <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-12 lg:ml-96">
+                <div>
+                    <h3 class="skill-group-title lg-sidebar-header">Intelligence & MLOps</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">MLOps</span>
+                        <span class="skill-pill">Power BI</span>
+                        <span class="skill-pill">Azure Cloud</span>
+                        <span class="skill-pill">GCP</span>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Professional Summary -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Strategic Data Orchestrator</h2>
-                <p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
-                    Enterprise-scale Data Lead with over 15 years of experience bridging legacy ERP systems (SAP/Oracle)
-                    with modern AI and Data Engineering. Expert in architecting distributed infrastructures that deliver
-                    <span class="metric-highlight">measurable business value</span>, from unifying $500M+ portfolios to
-                    automating core decision-making through Business AI.
+            <!-- Languages -->
+            <div class="mt-8 pt-6 border-t border-slate-700/50">
+                <h3 class="skill-group-title lg-sidebar-header">Languages</h3>
+                <div class="space-y-2 text-sm lg-sidebar-text">
+                    <div class="flex justify-between">
+                        <span>English</span>
+                        <span class="text-white font-medium">Professional (IELTS 6.5)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Finnish</span>
+                        <span class="text-emerald-400 font-medium">Learning (A1)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 lg:ml-[360px] p-6 lg:p-16 max-w-5xl mx-auto w-full">
+
+        <!-- Header / Strategic Narrative -->
+        <header class="mb-16">
+            <div
+                class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-600 uppercase bg-blue-50 rounded-full">
+                Modernizing Legacy Data Ecosystems
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight text-balance">
+                Bridging Enterprise ERP with <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">Modern AI
+                    Architectures</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+                Senior Data Lead with <strong>15+ years of experience</strong> connecting legacy frameworks (SAP,
+                Oracle) with scalable, cloud-native intelligence.
+                Expert in orchestrating high-volume ETL/ELT pipelines, enforcing Data Governance for <strong>$500M+
+                    portfolios</strong>, and designing infrastructure that drives measurable business outcomes.
+                Currently a Master's researcher and Teaching Assistant in Data Engineering at the <strong>University of
+                    Vaasa</strong>.
+            </p>
+        </header>
+
+        <!-- Academic Leadership (TA Role) -->
+        <section class="mb-16">
+            <h2 class="section-header text-slate-400 border-slate-200">Current Academic Role</h2>
+
+            <div class="bg-gradient-to-br from-slate-50 to-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Teaching Assistant & Research Fellow</h3>
+                        <p class="text-blue-600 font-medium">University of Vaasa <span
+                                class="text-slate-400 text-sm font-normal">| Finland</span></p>
+                    </div>
+                    <div class="mt-2 md:mt-0 flex flex-col md:items-end">
+                        <span class="text-sm font-bold text-slate-900">2025 — PRESENT</span>
+                        <span class="text-xs text-slate-500">Computing Sciences (AI & Data)</span>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-4 italic">
+                    Selected by the faculty to instruct Master's level students, bridging the gap between theoretical
+                    computer science and industrial application.
                 </p>
-            </section>
-
-            <!-- Experience -->
-            <section class="mb-12">
-                <div class="flex items-center justify-between mb-8 border-b-2 border-slate-100 pb-4">
-                    <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">Professional Experience</h2>
-                    <span class="text-slate-400 text-sm">2009 — 2026</span>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Digikala -->
-                    <div class="experience-card">
-                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900">Data Lead / Project Specialist</h3>
-                                <p class="text-blue-600 font-semibold">Digikala E-Commerce Group <span
-                                        class="text-slate-400 font-normal ml-2">| Tehran</span></p>
-                            </div>
-                            <span class="text-sm font-bold text-slate-500 mt-2 md:mt-0">JAN 2024 — PRESENT</span>
-                        </div>
-                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2 text-sm">
-                            <li>Spearheaded a group-wide <span class="font-bold">Data Governance framework</span>
-                                unifying practices across 8 business ventures for a $500M+ portfolio.</li>
-                            <li>Orchestrated the Customer Data Platform (CDP) project, consolidating multi-source
-                                intelligence to achieve <span class="metric-highlight">98% data accuracy</span> across
-                                the ecosystem.</li>
-                            <li>Engineered distributed pipelines using <span class="font-bold">Apache Spark and
-                                    Hadoop</span> to process 10GB+ daily volumes, enabling real-time cross-venture
-                                cannibalization analysis.</li>
-                        </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-sm text-slate-700">Instructing <strong>Python Programming & Data
+                                Engineering</strong> modules, focusing on scalable design patterns and clean
+                            code.</span>
                     </div>
-
-                    <!-- Snapp! -->
-                    <div class="experience-card">
-                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900">Marketing Data Lead</h3>
-                                <p class="text-blue-600 font-semibold">Snapp! Market (Romak) <span
-                                        class="text-slate-400 font-normal ml-2">| Tehran</span></p>
-                            </div>
-                            <span class="text-sm font-bold text-slate-500 mt-2 md:mt-0">SEP 2021 — JAN 2024</span>
-                        </div>
-                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2 text-sm">
-                            <li>Engineered the data infrastructure driving <span class="metric-highlight">500% revenue
-                                    growth</span> and a <span class="metric-highlight">23% marketing cost
-                                    reduction</span> through advanced statistical optimization.</li>
-                            <li>Automated vendor discount optimization by deploying <span class="font-bold">Multi-Armed
-                                    Bandit</span> algorithms into live production environments.</li>
-                            <li>Increased organizational <span class="font-bold">decision velocity by 80%</span> through
-                                the integration of Python-based predictive modeling with Metabase.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Takhfifan -->
-                    <div class="experience-card border-l-4 border-slate-200">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-bold text-slate-800">Business Data Specialist</h3>
-                            <span class="text-xs font-bold text-slate-400">2020 — 2021</span>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-2">Takhfifan (Arman Fanavari Aria)</p>
-                        <p class="text-xs text-slate-600">Developed data-driven product strategies resulting in a 75%
-                            C-level adoption rate and orchestrated group-wide OKR management.</p>
-                    </div>
-
-                    <!-- TAPSI -->
-                    <div class="experience-card border-l-4 border-slate-200">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-bold text-slate-800">Business Intelligence Analyst</h3>
-                            <span class="text-xs font-bold text-slate-400">2018 — 2020</span>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-2">TAPSI (Pishgaman Fanavari)</p>
-                        <p class="text-xs text-slate-600">Upgraded the BI landscape by architecting real-time Power BI
-                            reporting for churn analysis and growth forecasting.</p>
-                    </div>
-
-                    <!-- BASA (ERP Focus) -->
-                    <div class="experience-card bg-slate-50 border-blue-200">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-bold text-blue-800">ERP & BI Specialist</h3>
-                            <span class="text-xs font-bold text-blue-400">2011 — 2014</span>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-2">BASA (Informatics System Avaran)</p>
-                        <p class="text-xs text-slate-600 italic">Core Bridge Period: Consulted on enterprise
-                            implementation of Oracle ERP (SCM/ONT/Advanced Pricing), integrating legacy transactional
-                            data with Business Intelligence modules.</p>
-                    </div>
-
-                    <!-- Early Career -->
-                    <div class="text-center py-4">
-                        <p class="text-xs text-slate-400 uppercase tracking-widest">Early career: Junior Data Analyst at
-                            Yalda Dey (2009-2011)</p>
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                            </path>
+                        </svg>
+                        <span class="text-sm text-slate-700">Conducting advanced research in <strong>MLOps & Cloud
+                                Architecture</strong>, contributing to the department's cutting-edge curriculum.</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="mb-16">
+            <h2 class="section-header text-slate-400 border-slate-200">Professional Experience</h2>
+
+            <div class="space-y-0">
+
+                <!-- Digikala -->
+                <div class="experience-card">
+                    <div class="experience-dot"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between mb-2">
+                        <h3 class="text-lg font-bold text-slate-900">Data Lead / Project Specialist</h3>
+                        <span class="text-sm font-mono text-slate-500">JAN 2024 — PRESENT</span>
+                    </div>
+                    <p class="text-blue-600 font-medium text-sm mb-4">Digikala Group (Leading E-Commerce) <span
+                            class="text-slate-400">| Tehran</span></p>
+
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong>Unified Data Governance:</strong> Spearheaded a framework across 8 business
+                                ventures for a $500M+ portfolio, establishing single source of truth.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong>98% Data Accuracy:</strong> Orchestrated the Customer Data Platform (CDP)
+                                consolidation, eliminating data silos and enabling precise customer targeting.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong>Scalable Engineering:</strong> Designed distributed Spark/Hadoop pipelines
+                                processing 10GB+ daily to analyze cross-venture cannibalization in real-time.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Snapp! -->
+                <div class="experience-card">
+                    <div class="experience-dot"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between mb-2">
+                        <h3 class="text-lg font-bold text-slate-900">Marketing Data Lead</h3>
+                        <span class="text-sm font-mono text-slate-500">SEP 2021 — JAN 2024</span>
+                    </div>
+                    <p class="text-blue-600 font-medium text-sm mb-4">Snapp! Market (Romak) <span
+                            class="text-slate-400">| Tehran</span></p>
+
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong>23% Cost Reduction:</strong> Engineered statistical optimization models for
+                                marketing spend, directly improving EBITDA while maintaining growth.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong> Automated Decisioning:</strong> Deployed Multi-Armed Bandit algorithms into
+                                production to automate and optimize vendor discount strategies.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-slate-400">•</span>
+                            <span><strong>80% Faster Decisions:</strong> Built a self-service BI ecosystem utilizing
+                                Python predictive modeling and Metabase.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Takhfifan -->
+                <div class="experience-card">
+                    <div class="experience-dot"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between mb-2">
+                        <h3 class="text-lg font-bold text-slate-900">Business Data Specialist</h3>
+                        <span class="text-sm font-mono text-slate-500">2020 — 2021</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">Takhfifan (Arman Fanavari Aria)</p>
+                    <p class="text-sm text-slate-600">
+                        Orchestrated group-wide OKR management and developed data strategies that achieved a <strong>75%
+                            C-level adoption rate</strong>, transforming the company culture to be data-first.
+                    </p>
+                </div>
+
+                <!-- TAPSI -->
+                <div class="experience-card">
+                    <div class="experience-dot"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between mb-2">
+                        <h3 class="text-lg font-bold text-slate-900">Business Intelligence Analyst</h3>
+                        <span class="text-sm font-mono text-slate-500">2018 — 2020</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">TAPSI (Ride-hailing)</p>
+                    <p class="text-sm text-slate-600">
+                        Architected real-time Power BI dashboards for churn prediction and growth forecasting, enabling
+                        agile operational adjustments in a high-competition market.
+                    </p>
+                </div>
+
+                <!-- BASA (The Bridge) -->
+                <div class="experience-card rounded-bl-xl bg-slate-50 -ml-4 pl-8 py-6 pr-4 border-l-4 border-blue-200">
+                    <div class="experience-dot !border-blue-300"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between mb-2">
+                        <h3 class="text-lg font-bold text-slate-800">ERP & BI Specialist (The Foundation)</h3>
+                        <span class="text-sm font-mono text-slate-500">2011 — 2014</span>
+                    </div>
+                    <p class="text-blue-600 font-medium text-sm mb-3">BASA (Informatics System Avaran)</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong>The Bridge Role:</strong> Consulted on complex enterprise implementations of
+                        <strong>Oracle ERP</strong> (SCM/ONT/Advanced Pricing). Successfully integrated legacy
+                        transactional data with modern Business Intelligence modules, laying the groundwork for my
+                        expertise in hybrid data architectures.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Merits Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
             <!-- Education -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h2
-                        class="text-xl font-bold text-slate-800 uppercase tracking-wider mb-6 border-b-2 border-slate-100 pb-2">
-                        Academic Path</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-bold text-slate-900">MSc, Computing Sciences (AI & Data)</h3>
-                            <p class="text-blue-600 text-sm font-semibold">University of Vaasa, Finland <span
-                                    class="text-slate-400 ml-1">| 2025—2027</span></p>
-                            <p class="text-xs text-slate-500 mt-2">Serving as <span class="font-bold">Teaching
-                                    Assistant</span> for Python Programming and Data Engineering modules (2025).</p>
+            <div>
+                <h2 class="section-header text-slate-400 border-slate-200">Education</h2>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-900">MSc, Computing Sciences</h3>
+                            <span class="text-xs font-mono text-slate-500">2025—2027</span>
                         </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900">MA, IT Entrepreneurship</h3>
-                            <p class="text-slate-600 text-sm">University of Tehran <span class="text-slate-400 ml-1">|
-                                    Graduated 2018</span></p>
-                            <p class="text-xs text-slate-400">Ranked 1st in class. GPA: 18.15/20.</p>
-                        </div>
+                        <p class="text-sm text-blue-600 font-medium mb-1">University of Vaasa, Finland</p>
+                        <p class="text-xs text-slate-500">Major: Artificial Intelligence & Data Architecture</p>
                     </div>
-                </div>
-                <div>
-                    <h2
-                        class="text-xl font-bold text-slate-800 uppercase tracking-wider mb-6 border-b-2 border-slate-100 pb-2">
-                        Merits</h2>
-                    <div class="space-y-4 text-sm">
-                        <p class="text-slate-600"><span class="font-bold">Publication:</span> Evaluating Eating Disorder
-                            Prevention via Twitter Data Analysis (Health Promotion Journal, 2021).</p>
-                        <p class="text-slate-600"><span class="font-bold">Book:</span> "Joke Marketing: An
-                            Entrepreneurial Approach" (2019).</p>
-                        <p class="text-slate-600"><span class="font-bold">Startup:</span> Co-founder of
-                            \textit{daye.ir}, University of Tehran Incubator graduate.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
 
-    <!-- Mobile Menu Logic -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-slate-900">MA, IT Entrepreneurship</h3>
+                            <span class="text-xs font-mono text-slate-500">2018</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-1">University of Tehran</p>
+                        <p class="text-xs text-slate-500">Ranked 1st in class (GPA: 18.15/20)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Merits -->
+            <div>
+                <h2 class="section-header text-slate-400 border-slate-200">Key Merits</h2>
+                <ul class="space-y-4 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2 text-lg">›</span>
+                        <span><strong>Publication:</strong> Evaluating Eating Disorder Prevention via Twitter Data
+                            Analysis (Health Promotion Journal, 2021).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2 text-lg">›</span>
+                        <span><strong>Author:</strong> "Joke Marketing: An Entrepreneurial Approach" (2019) - analyzing
+                            viral data patterns.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2 text-lg">›</span>
+                        <span><strong>Founder:</strong> Co-founded <em>daye.ir</em>, a data-driven startup incubated at
+                            the University of Tehran.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 flex justify-between items-center text-xs text-slate-400">
+            <p>&copy; 2026 Daniel Ebrahimzadeh. Built with HTML5 & Tailwind.</p>
+            <div class="flex gap-4">
+                <a id="link-footer-pdf" href="#" class="hover:text-blue-600">Download PDF</a>
+                <a id="link-footer-contact" href="mailto:daniel.ebrz.93@gmail.com"
+                    class="hover:text-blue-600">Contact/Hire</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Mobile Menu Script -->
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
+        const btn = document.getElementById('mobile-menu-toggle');
         const sidebar = document.getElementById('sidebar');
+
         btn.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('fixed');
-            sidebar.classList.toggle('inset-0');
+            if (sidebar.classList.contains('hidden')) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('flex', 'fixed', 'inset-0', 'bg-slate-900', 'z-50');
+            } else {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('flex', 'fixed', 'inset-0', 'bg-slate-900', 'z-50');
+            }
         });
     </script>
 </body>
