@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Spank App</title>
+    <style>
+        :root {
+            --primary-color: #00CCFF;
+            --secondary-color: #FF00FF;
+            --bg-color: #0B0B0B;
+            --card-bg: #1A1A1A;
+            --text-color: #E0E0E0;
+            --accent-glow: rgba(0, 204, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--card-bg);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .sensor-tag {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 15px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Privacy Policy</h1>
+        <p><strong>App:</strong> Spank</p>
+        <p><strong>Developer:</strong> Däniel Ebrahimzadeh AI Labs</p>
+        <p class="last-updated">Effective Date: May 20, 2024</p>
+    </header>
+
+    <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>Welcome to Spank, an interactive motion-based prank application. Däniel Ebrahimzadeh AI Labs ("we," "us," or "our") is committed to protecting your privacy. This policy explains how we handle technical data and user-provided information to provide a safe and transparent experience.</p>
+    </section>
+
+    <section id="data-collection">
+        <h2>2. Types of Data Collected</h2>
+        <p>We distinguish between data processed automatically for app functionality and data provided voluntarily by the user.</p>
+        <ul>
+            <li><strong>Automatic Technical Data:</strong> High-frequency sensor data required for real-time motion detection.</li>
+            <li><strong>Voluntary User Data:</strong> Audio recordings created via the "Community Voice" feature and contact information provided during support requests.</li>
+        </ul>
+    </section>
+
+    <section id="sensor-usage">
+        <h2>3. Detailed Sensor Usage</h2>
+        
+        <div>
+            <span class="sensor-tag">ACCELEROMETER</span>
+            <p>Spank uses the device's accelerometer to detect physical impact and motion intensity. This data is processed <strong>locally in real-time</strong> on your device's CPU/NPU. We do not store, log, or transmit accelerometer patterns to any external servers.</p>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <span class="sensor-tag">MICROPHONE</span>
+            <p>The microphone is used <strong>only</strong> when you explicitly interact with the "Record" button in the Community Voice section. 
+            <ul>
+                <li>Audio is recorded into a temporary local file.</li>
+                <li>Transmission to our servers only occurs if you choose to "Submit" the recording.</li>
+                <li>Background recording is strictly prohibited and technically impossible within our implementation.</li>
+            </ul>
+            </p>
+        </div>
+    </section>
+
+    <section id="retention">
+        <h2>4. Data Retention & Deletion</h2>
+        <p>Your privacy is maintained through minimal retention:</p>
+        <ul>
+            <li><strong>Motion Data:</strong> Deleted immediately after the audio trigger is processed (milliseconds).</li>
+            <li><strong>Local Audio:</strong> Custom recordings stay on your device unless the app is uninstalled or data is cleared.</li>
+            <li><strong>Submitted Audio:</strong> If you submit a voice file, it is stored on our secure servers for review. You may request deletion at any time by contacting us.</li>
+        </ul>
+    </section>
+
+    <section id="children">
+        <h2>5. Children's Privacy (COPPA/GDPR-K)</h2>
+        <p>Spank is not intended for children under the age of 13 (or 16 in the EU). We do not knowingly collect data from children. If we discover a child has submitted audio data, we will delete it immediately from our servers.</p>
+    </section>
+
+    <section id="security">
+        <h2>6. Security Measures</h2>
+        <p>We employ industry-standard encryption (TLS/SSL) for any data in transit. As a "Purely Native" implementation, we avoid third-party SDKs, significantly reducing the "attack surface" and ensuring your data isn't shared with advertising networks or data brokers.</p>
+    </section>
+
+    <section id="user-rights">
+        <h2>7. Your Rights (GDPR Compliant)</h2>
+        <p>Under GDPR and similar global regulations, you have the right to:</p>
+        <ul>
+            <li>Access any data you have submitted to us.</li>
+            <li>Request the permanent deletion of your submitted recordings.</li>
+            <li>Withdraw consent for microphone usage via system settings at any time.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>8. Contact Information</h2>
+        <p>For privacy inquiries, data deletion requests, or support, please contact:</p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:mh.ebrz@gmail.com">mh.ebrz@gmail.com</a><br>
+            <strong>Web:</strong> <a href="https://mhe931.github.io/" target="_blank">mhe931.github.io</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2024 Däniel Ebrahimzadeh AI Labs. All rights reserved.<br>
+        This policy is subject to updates to remain compliant with evolving App Store and Play Store guidelines.
+    </footer>
+</div>
+
+</body>
+</html>
