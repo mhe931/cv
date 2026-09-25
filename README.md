@@ -1,40 +1,53 @@
-# Däniel Ebrahimzadeh - Professional Portfolio
+# Daniel Ebrahimzadeh — Professional CV
 
-Welcome to my professional portfolio repository. This project contains the source code for my online CV, optimized for roles in Data Engineering and Artificial Intelligence within the Finnish technology sector.
+Public, LLM-readable source for my professional CV and GitHub Pages resume.
 
-As a process-oriented data professional and a Master's student in AI and Data Engineering at the University of Vaasa, my focus is on building robust, scalable data solutions that deliver clear business value.
+## Current profile
 
-### Live Portfolio
+Data and AI professional with 12+ years of experience across data engineering, BI, ERP, analytics, data governance, machine learning, computer vision, and MLOps. Based in Finland and completing an MSc in Computing Sciences at the University of Vaasa.
 
-A live, interactive version of my CV can be viewed here: **[Insert Your Live Portfolio URL Here]**
+## Most recent experience
 
----
+### UPM-Kymmene Oyj — Computer Vision & Advanced Analytics Summer Worker
+**May 25, 2026 — Sep 25, 2026 · Finland**
 
-### Technical Stack
+- Delivered end-to-end industrial computer vision work: image and mask processing, dataset curation, human-in-the-loop review, model training, evaluation, and reproducible ML workflows.
+- Built production-oriented Python and MLOps components on Microsoft Azure.
+- Worked with Azure Machine Learning, Azure Container Apps, Azure Container Registry, Azure SQL, Azure Blob Storage, managed identities, and Microsoft Entra ID authentication/authorization.
+- Used Docker, GitHub Actions, CI/CD, model lifecycle practices, and engineering documentation.
+- Worked with process experts, operators, managers, and solution architects and supported operational handover.
+- Completed a **Solita Terraform with Azure crash course** on September 24, 2026. Terraform / Infrastructure as Code skill level should be represented as **foundational**, not production-expert level.
+- Project-specific implementation details are confidential and should not be disclosed in job applications.
 
-This portfolio is a single-file HTML document styled with **Tailwind CSS**. The core technologies and competencies I work with professionally include:
+## Core skills
 
-- **Languages & Databases:** Python (Pandas, Dask), SQL, SQL Server, MySQL, Google BigQuery
-- **Distributed Systems & Cloud:** Apache Spark, Apache Hadoop, Apache Airflow, ETL/ELT Pipelines
-- **BI & Visualization:** Metabase, Power BI, Tableau, QlikView, Looker
-- **Methodologies:** Data Governance, Data Modeling, Agile/Scrum
-- **Industry Context:** IIoT (Industrial IoT), E-commerce, Marketing Technology
+**Programming & data:** Python, SQL, FastAPI, Async Python, ETL/ELT, Apache Airflow, Apache Spark, data modelling, data architecture.
 
----
+**AI / ML / CV:** Computer Vision, OpenCV, MLOps, model evaluation, reproducible ML workflows, human-in-the-loop ML, reinforcement learning.
 
-### Strategic Impact & Quantified Achievements
+**Azure & DevOps:** Microsoft Azure, Azure Machine Learning, Azure Container Apps, Azure Container Registry, Azure SQL, Azure Blob Storage, Microsoft Entra ID, managed identities, Docker, GitHub Actions, CI/CD.
 
-Throughout my career, I have focused on translating technical work into measurable business outcomes. Key achievements include:
+**Infrastructure as Code:** Terraform — foundational training with Azure.
 
-- **Drove 500% Revenue Growth:** At Snapp! Market, I engineered the data analytics infrastructure that directly supported strategies leading to a fivefold increase in revenue.
-- **Reduced Marketing Costs by 23%:** By implementing a rigorous A/B testing framework and optimizing data pipelines, I achieved a significant reduction in customer acquisition costs.
-- **Improved Data Accuracy to 98%:** Re-architected ETL workflows, which enhanced data reliability and provided more trustworthy insights for decision-making.
-- **Unified Data Strategy for a $500M+ Portfolio:** At Digikala, I designed and implemented an enterprise-scale Data Governance Framework across 8 independent ventures, creating a single source of truth and enabling cohesive cross-venture analysis.
+**Analytics & enterprise:** Business Intelligence, Marketing Analytics, Data Governance, SSAS, Metabase, Mixpanel, Oracle ERP, OKR management.
 
----
+## Selected earlier experience
 
-### Contact
+- **Senior Data Lead — Digikala Holding** (Jan 2024 — Mar 2025)
+- **Marketing Data Lead — Snapp Market / Romak** (Sep 2021 — Jan 2024)
+- **Business Data Specialist — Takhfifan** (2020 — 2021)
+- **Business Intelligence Analyst — TAP30** (2018 — 2020)
+- **ERP & BI Specialist — BASA** (2011 — 2014)
 
-- **Email:** ebrz.daniel@gmail.com
-- **LinkedIn:** [https://www.linkedin.com/in/däniel-ebrahimzadeh-83a95653/](https://www.linkedin.com/in/däniel-ebrahimzadeh-83a95653/)
-- **GitHub:** [https://github.com/mhe931](https://github.com/mhe931)
+## Education
+
+- **MSc, Computing Sciences — University of Vaasa** (2025 — Present)
+- **MA, IT Entrepreneurship — University of Tehran** (2018), ranked 1st in class, GPA 18.15/20
+
+## Live CV
+
+https://mhe931.github.io/cv/
+
+## Machine-use note
+
+For job-application automation, use the private `mhe931/career-profile` repository/API as the canonical source of truth. This public repository contains only application-safe information.
