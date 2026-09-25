@@ -31,6 +31,11 @@ Data and AI professional with 12+ years of experience across data engineering, B
 
 **Analytics & enterprise:** Business Intelligence, Marketing Analytics, Data Governance, SSAS, Metabase, Mixpanel, Oracle ERP, OKR management.
 
+## Speaking & Workshops
+
+- **Mastering the AI Interface — University of Vaasa (2026):** Presenter and facilitator for an interactive workshop on effective prompting, human-AI interaction, task specification, and iterative use of AI tools for a group of approximately 10–20 participants.
+- **Professional Prompting @ UPM — UPM-Kymmene Oyj (2026):** Designed and facilitated a practical internal AI workshop covering task specification, grounding, iterative improvement, verification, hallucinations, privacy, prompt injection, risk-based human review, and workplace use cases.
+
 ## Selected earlier experience
 
 - **Senior Data Lead — Digikala Holding** (Jan 2024 — Mar 2025)
