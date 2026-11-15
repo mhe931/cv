@@ -8,14 +8,16 @@ Data and AI professional with 12+ years of experience across data engineering, B
 
 ## Most recent experience
 
-### UPM-Kymmene Oyj — Computer Vision & Advanced Analytics Summer Worker
-**May 25, 2026 — Sep 25, 2026 · Finland**
+### UPM-Kymmene Oyj — Trainee, Computer Vision & Advanced Analytics
+**May 25, 2026 — Present · Finland**
 
-- Delivered end-to-end industrial computer vision work: image and mask processing, dataset curation, human-in-the-loop review, model training, evaluation, and reproducible ML workflows.
-- Built production-oriented Python and MLOps components on Microsoft Azure.
-- Worked with Azure Machine Learning, Azure Container Apps, Azure Container Registry, Azure SQL, Azure Blob Storage, managed identities, and Microsoft Entra ID authentication/authorization.
-- Used Docker, GitHub Actions, CI/CD, model lifecycle practices, and engineering documentation.
-- Worked with process experts, operators, managers, and solution architects and supported operational handover.
+- Started as a Computer Vision & Advanced Analytics Summer Worker (May 25–Sep 25, 2026), and continued employment at UPM under a **Trainee** contract. The exact trainee contract effective date is not specified.
+
+- Work across end-to-end industrial computer vision: image and mask processing, dataset curation, human-in-the-loop review, model training, evaluation, and reproducible ML workflows.
+- Build production-oriented Python and MLOps components on Microsoft Azure.
+- Work with Azure Machine Learning, Azure Container Apps, Azure Container Registry, Azure SQL, Azure Blob Storage, managed identities, and Microsoft Entra ID authentication/authorization.
+- Use Docker, GitHub Actions, CI/CD, model lifecycle practices, and engineering documentation.
+- Collaborate with process experts, operators, managers, and solution architects; support operational handover.
 - Completed a **Solita Terraform with Azure crash course** on September 24, 2026. Terraform / Infrastructure as Code skill level should be represented as **foundational**, not production-expert level.
 - Project-specific implementation details are confidential and should not be disclosed in job applications.
 
